@@ -1016,7 +1016,11 @@ JSQMessagesKeyboardControllerDelegate>
 
 - (void)jsq_adjustInputToolbarHeightConstraintByDelta:(CGFloat)dy
 {
-    CGFloat proposedHeight = self.toolbarHeightConstraint.constant + dy;
+    CGFloat proposedHeight;
+    proposedHeight = self.toolbarHeightConstraint.constant + dy;
+    if (dy < 0 && self.inputToolbar.maximumHeight != NSNotFound) {
+        proposedHeight = MAX(proposedHeight, self.inputToolbar.contentView.textView.contentSize.height + 16);
+    }
 
     CGFloat finalHeight = MAX(proposedHeight, self.inputToolbar.preferredDefaultHeight);
 
@@ -1144,7 +1148,7 @@ JSQMessagesKeyboardControllerDelegate>
                                                            action:@selector(jsq_handleInteractivePopGestureRecognizer:)];
         self.currentInteractivePopGestureRecognizer = nil;
     }
-    
+
     if (addAction) {
         [self.navigationController.interactivePopGestureRecognizer addTarget:self
                                                                       action:@selector(jsq_handleInteractivePopGestureRecognizer:)];
