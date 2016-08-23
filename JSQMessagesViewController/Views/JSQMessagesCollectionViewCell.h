@@ -72,6 +72,9 @@
  */
 - (void)messagesCollectionViewCell:(JSQMessagesCollectionViewCell *)cell didPerformAction:(SEL)action withSender:(id)sender;
 
+
+- (void)messagesCollectionViewScheduleAdjustButtonDidTap:(JSQMessagesCollectionViewCell *)cell withSender:(id)sender;
+
 @end
 
 
@@ -154,6 +157,11 @@
  */
 @property (weak, nonatomic, readonly) UIView *avatarContainerView;
 
+
+@property (weak, nonatomic, readonly) UIView *scheduleAdjustAreaBorder;
+@property (weak, nonatomic, readonly) UIButton *scheduleAdjustButton;
+
+
 /**
  *  The media view of the cell. This view displays the contents of a media message.
  *
@@ -166,6 +174,7 @@
  *  This gesture handles the tap event for the avatarImageView and notifies the cell's delegate.
  */
 @property (weak, nonatomic, readonly) UITapGestureRecognizer *tapGestureRecognizer;
+
 
 #pragma mark - Class methods
 

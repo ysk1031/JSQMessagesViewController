@@ -42,6 +42,9 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UIView *avatarContainerView;
 
+@property (weak, nonatomic) IBOutlet UIView *scheduleAdjustAreaBorder;
+@property (weak, nonatomic) IBOutlet UIButton *scheduleAdjustButton;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *messageBubbleContainerWidthConstraint;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewTopVerticalSpaceConstraint;
@@ -61,6 +64,8 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 @property (assign, nonatomic) CGSize avatarViewSize;
 
 @property (weak, nonatomic, readwrite) UITapGestureRecognizer *tapGestureRecognizer;
+
+- (IBAction)scheduleAdjustButtonTapped:(UIButton *)sender;
 
 - (void)jsq_handleTapGesture:(UITapGestureRecognizer *)tap;
 
@@ -364,6 +369,10 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 }
 
 #pragma mark - Gesture recognizers
+
+- (IBAction)scheduleAdjustButtonTapped:(UIButton *)sender {
+    [self.delegate messagesCollectionViewScheduleAdjustButtonDidTap:self withSender:sender];
+}
 
 - (void)jsq_handleTapGesture:(UITapGestureRecognizer *)tap
 {
