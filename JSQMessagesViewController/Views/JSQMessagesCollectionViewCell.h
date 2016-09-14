@@ -161,6 +161,9 @@
 @property (weak, nonatomic, readonly) UIView *scheduleAdjustAreaBorder;
 @property (weak, nonatomic, readonly) UIButton *scheduleAdjustButton;
 
+@property (weak, nonatomic, readonly) UIView *scheduleLinkSendingView;
+@property (weak, nonatomic, readonly) UIView *scheduleLinkSendingAreaBorder;
+
 
 /**
  *  The media view of the cell. This view displays the contents of a media message.

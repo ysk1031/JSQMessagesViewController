@@ -45,6 +45,9 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 @property (weak, nonatomic) IBOutlet UIView *scheduleAdjustAreaBorder;
 @property (weak, nonatomic) IBOutlet UIButton *scheduleAdjustButton;
 
+@property (weak, nonatomic) IBOutlet UIView *scheduleLinkSendingView;
+@property (weak, nonatomic) IBOutlet UIView *scheduleLinkSendingAreaBorder;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *messageBubbleContainerWidthConstraint;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewTopVerticalSpaceConstraint;
