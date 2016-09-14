@@ -36,6 +36,9 @@ const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingDefault = 8.0f;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftHorizontalSpacingConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *rightHorizontalSpacingConstraint;
 
+@property (weak, nonatomic, readwrite) IBOutlet NSLayoutConstraint *textViewLeftHorizontalSpacing;
+@property (weak, nonatomic, readwrite) IBOutlet NSLayoutConstraint *textViewRightHorizontalSpacing;
+
 @end
 
 
@@ -159,6 +162,18 @@ const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingDefault = 8.0f;
     [self setNeedsUpdateConstraints];
 }
 
+- (void)setTextViewLeftPadding:(CGFloat)textViewLeftPadding
+{
+    self.textViewLeftHorizontalSpacing.constant = textViewLeftPadding;
+    [self setNeedsUpdateConstraints];
+}
+
+- (void)setTextViewRightPadding:(CGFloat)textViewRightPadding
+{
+    self.textViewRightHorizontalSpacing.constant = textViewRightPadding;
+    [self setNeedsUpdateConstraints];
+}
+
 #pragma mark - Getters
 
 - (CGFloat)leftBarButtonItemWidth
@@ -179,6 +194,16 @@ const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingDefault = 8.0f;
 - (CGFloat)leftContentPadding
 {
     return self.leftHorizontalSpacingConstraint.constant;
+}
+
+- (CGFloat)textViewLeftPadding
+{
+    return self.textViewLeftHorizontalSpacing.constant;
+}
+
+- (CGFloat)textViewRightPadding
+{
+    return self.textViewRightHorizontalSpacing.constant;
 }
 
 #pragma mark - UIView overrides
