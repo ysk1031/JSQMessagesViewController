@@ -182,4 +182,8 @@
                        withSender:sender];
 }
 
+- (void)messagesCollectionViewScheduleAdjustButtonDidTap:(JSQMessagesCollectionViewCell *)cell withSender:(id)sender
+{
+}
+
 @end
